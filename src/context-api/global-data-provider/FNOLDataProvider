@@ -1,0 +1,9 @@
+import producer from Context
+
+const FNOLDataProvider = (fnolFormData, submissionStatus, apiResponses) => {
+
+    producer.putInContext(fnolFormData, submissionStatus, apiResponses);
+
+}
+
+export default FNOLDataProvider
