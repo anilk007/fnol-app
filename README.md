@@ -1,16 +1,17 @@
-# React + Vite
+First Notice of Loss (FNOL) Web application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ A customer reports an incident, and the system must validate, process, audit, and store the information.
 
-Currently, two official plugins are available:
+ below are implemented :
+ (1) Create a FNOL Submission Form with fields like policy number, incident date, location, description, and contact info.
+ (2) Implement Context API to manage app-wide state such as form data, submission status, and API responses.
+(3)
+Add a custom Axios interceptor to append headers (e.g., correlation IDs, auth tokens) and 
+to centrally log or manipulate API responses.
+(4) On submission:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Show a loading indicator
+Call the Node.js API
+Redirect to Success or Error screen depending on API response (e.g., incidentId returned vs. validation failure).
+Store the submission result in Context so the success page can show details (e.g., generated reference number).
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
